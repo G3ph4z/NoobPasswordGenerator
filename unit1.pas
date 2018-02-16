@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls;
+  ComCtrls, Clipbrd;
 
 type
 
@@ -19,6 +19,7 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     Label1: TLabel;
+    StatusBar1: TStatusBar;
     procedure Button1Click(Sender: TObject);
   private
 
@@ -28,6 +29,7 @@ type
 
 var
   Form1: TForm1;
+  pcrt: SmallInt;
 
 implementation
 
@@ -70,7 +72,10 @@ begin
        end
     else
         begin
-             Edit1.Text := RandomString(length,CheckBox1,CheckBox2)
+             Edit1.Text := RandomString(length,CheckBox1,CheckBox2);
+             Clipboard.AsText := Edit1.Text;
+             pcrt := pcrt+1;
+             StatusBar1.Panels[3].Text := IntToStr(pcrt);
         end;
 end;
 
