@@ -11,8 +11,10 @@ uses
   { you can add units after this };
 
 {$R *.res}
+{$R project.rc} 
 
 begin
+  Application.Title:='Noob Password Generator';
   RequireDerivedFormResource:=True;
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
