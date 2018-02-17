@@ -21,7 +21,7 @@ object Form1: TForm1
     Left = 16
     Height = 23
     Top = 16
-    Width = 280
+    Width = 288
     TabOrder = 1
     Text = 'Click to generate'
   end
